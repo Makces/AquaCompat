@@ -1,97 +1,74 @@
 # AquaCompat
 
-Compatibility and integration patches for Aquaculture 2 and related mods on NeoForge 1.21.1.
+AquaCompat is a small compatibility mod for NeoForge 1.21.1. It sits between Aquaculture 2, Farmer's Delight, and JEI and fixes the places where fish processing gets awkward.
 
-This project is aimed at two groups:
+## What it does
 
-- Players who just want their fishing and food mods to behave better together
-- Developers or pack authors who want to inspect, build, or extend the mod
+- Adds Farmer's Delight cutting-board recipes for Aquaculture fish and for the vanilla cod and salmon cases that use the Neptunium Fillet Knife
+- Carries the Neptunium Fillet Knife bonus through Aquaculture filleting and cutting-board outputs, including chance-based extra slices
+- Backs off when another cutting-board recipe should win, so AquaCompat does not force its own recipe to the front
+- Cleans up JEI so the recipe list matches the behavior in game instead of showing stale or misleading entries
+- Includes a small fix for Aquaculture's moist farmland so ordinary crops and similar plants can treat it as farmland
 
-## What It Does
+This is not a content expansion. The point is to make existing mods agree with each other.
 
-AquaCompat focuses on smoothing out interactions around Aquaculture.
+## Requirements
 
-Current work in this repository includes:
+AquaCompat requires Minecraft 1.21.1, NeoForge, and [Aquaculture 2](https://www.curseforge.com/minecraft/mc-mods/aquaculture).
 
-- Neptunium Fillet Knife bonus handling for fish filleting
-- Farmer's Delight cutting board integration for Aquaculture fish
-- JEI-side recipe visibility and conflict cleanup for overlapping recipes
-- Data-driven hooks and generated resources for compatibility behavior
+[Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight) and [JEI](https://www.curseforge.com/minecraft/mc-mods/jei) are optional. If Farmer's Delight is missing, the cutting-board side of the mod has nothing to patch. If JEI is missing, only the JEI cleanup layer is skipped.
 
-## For Players
+## Configuration
 
-### Requirements
+The common config is mostly about the Neptunium knife bonus. You can turn it off, change the multiplier, decide how rounding works, whitelist or blacklist items and tags, choose whether cooked fish should participate, and control whether AquaCompat recipes should yield to competing cutting-board recipes.
 
-- Minecraft 1.21.1
-- NeoForge
-- [Aquaculture 2](https://www.curseforge.com/minecraft/mc-mods/aquaculture)
+There is also datapack support for per-fish overrides under `data/*/neptunium_fillet_bonus`. Those definitions take priority over the fallback multiplier from the config.
 
-Optional integrations currently target:
+## For players and pack makers
 
-- [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight)
-- [Just Enough Items (JEI)](https://www.curseforge.com/minecraft/mc-mods/jei)
+If you already run Aquaculture with Farmer's Delight, this mod is meant to make filleting and cutting-board recipes feel like they belong in the same pack.
 
-### What You Should Expect In-Game
+For pack work, the common config is enough if you just want to tune the bonus globally. If you want different fish to use different values, use the datapack hook instead.
 
-- Better compatibility between Aquaculture fish items and food-processing workflows
-- Neptunium knife bonus behavior that can apply to fish slicing and related recipes
-- Cleaner recipe presentation when multiple mods provide overlapping outputs
+## Development
 
-### Configuration
-
-The mod includes common config options for the Neptunium knife bonus system, including:
-
-- Whether the bonus is enabled
-- Bonus multiplier amount
-- Round-up behavior for small outputs
-- Whitelist and blacklist controls by item or tag
-
-If you are building a modpack, these settings let you tune how generous or strict the bonus logic should be.
-
-## For Developers
-
-### Stack
+Toolchain:
 
 - Java 21
 - Gradle
-- NeoForge ModDev plugin
+- NeoForge ModDev
 - Parchment mappings
 
-### Project Layout
-
-- [`src/main/java`](src/main/java): mod code, integration hooks, mixins, config, and data generators
-- [`src/main/resources`](src/main/resources): bundled assets, tags, data, mixin config, and logo
-- [`src/generated/resources`](src/generated/resources): generated resources used by the build
-- [`scripts`](scripts): local helper scripts such as compatibility matrix tooling
-
-### Build
+Build the mod:
 
 ```powershell
 ./gradlew build
 ```
 
-The built jar will be written to `build/libs`.
-
-### Run The Dev Client
+Run the dev client:
 
 ```powershell
 ./gradlew runClient
 ```
 
-### Generate Data
+Run GameTests:
+
+```powershell
+./gradlew runGameTestServer
+```
+
+Run data generation:
 
 ```powershell
 ./gradlew runData
 ```
 
-Generated resources are written into `src/generated/resources`, which is intentionally part of this repository's source set.
+Generated resources in `src/generated/resources` are checked in on purpose. The compatibility sweep script lives at [scripts/compat-matrix.ps1](scripts/compat-matrix.ps1).
 
-### Notes For Contributors
+## Issues
 
-- The repository currently uses an `All Rights Reserved` license setting in its Gradle metadata
-- The mod is built around compatibility behavior, so gameplay changes should stay narrow and predictable
-- If you change recipe or loot-like behavior, verify both in-game results and JEI presentation
+When reporting a bug, include:
 
-## Repository Status
-
-This repository is being prepared for public release, so expect cleanup and documentation improvements while the codebase settles.
+- Log when the bug happened.
+- Steps to reproduce the bug (if possible)
+- if removing Aquacompat fixes the bug
