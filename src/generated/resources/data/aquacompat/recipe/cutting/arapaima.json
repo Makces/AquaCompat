@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "aquaculture:arapaima"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 12,
+        "id": "aquaculture:fish_fillet_raw"
+      }
+    },
+    {
+      "chance": 0.5,
+      "item": {
+        "count": 1,
+        "id": "aquaculture:fish_fillet_raw"
+      }
+    }
+  ],
+  "tool": {
+    "item": "aquaculture:neptunium_fillet_knife"
+  }
+}

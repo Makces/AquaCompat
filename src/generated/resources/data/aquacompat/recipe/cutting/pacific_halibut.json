@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "aquaculture:pacific_halibut"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 15,
+        "id": "aquaculture:fish_fillet_raw"
+      }
+    }
+  ],
+  "tool": {
+    "item": "aquaculture:neptunium_fillet_knife"
+  }
+}

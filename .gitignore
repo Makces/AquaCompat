@@ -1,0 +1,34 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Gradle caches and build output
+.gradle/
+build/
+out/
+repo/
+
+# IDE/editor settings
+.idea/
+.idea_modules/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Runtime and local test workdirs
+run/
+run-data/
+tmp/
+logs/
+crash-reports/
+
+# Generated caches; keep actual generated resources trackable
+src/generated/resources/.cache/
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# Misc local artifacts
+*.log

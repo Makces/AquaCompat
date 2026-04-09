@@ -1,0 +1,16 @@
+{
+  "tooltip.aquacompat.technical_header": "Technical Details",
+  "tooltip.aquacompat.yes": "Yes",
+  "tooltip.aquacompat.no": "No",
+  "tooltip.aquacompat.neptunes_feast.base_effect": "Aquaculture: Neptune's Feast increases fillet yield.",
+  "tooltip.aquacompat.neptunes_feast.cutting_board_bonus": "AquaCompat cutting-board bonus: %s",
+  "tooltip.aquacompat.neptunes_feast.multiplier": "Configured multiplier: %s",
+  "tooltip.aquacompat.neptunes_feast.rounding": "Round up fractional bonuses: %s",
+  "tooltip.aquacompat.neptunes_feast.override_source": "Per-fish datapack values in data/*/neptunium_fillet_bonus override the config multiplier.",
+  "tooltip.aquacompat.fish.item_id": "Item id: %s",
+  "tooltip.aquacompat.fish.base_fillets": "Aquaculture base fillets: %s",
+  "tooltip.aquacompat.fish.neptunes_feast_guaranteed": "Neptune's Feast guaranteed output: %s",
+  "tooltip.aquacompat.fish.neptunes_feast_extra": "Neptune's Feast extra +1 chance: %s",
+  "tooltip.aquacompat.fish.datapack_override": "Multiplier source: AquaCompat datapack override",
+  "tooltip.aquacompat.fish.config_fallback": "Multiplier source: AquaCompat config fallback"
+}
