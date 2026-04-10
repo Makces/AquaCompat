@@ -1,34 +1,35 @@
 # AquaCompat
 
-AquaCompat is a small compatibility mod for NeoForge 1.21.1. It sits between Aquaculture 2, Farmer's Delight, and JEI and fixes the places where fish processing gets awkward.
+AquaCompat is a NeoForge 1.21.1 compatibility mod for Aquaculture 2. It adds the Farmer's Delight fish-processing recipes, keeps Neptunium knife bonuses consistent with added JEI partial integration, and fixes Aquaculture's moist farmland from Neptunium Hoe so modded crops can treat it as farmland.
 
-## What it does
 
-- Adds Farmer's Delight cutting-board recipes for Aquaculture fish and for the vanilla cod and salmon cases that use the Neptunium Fillet Knife
-- Carries the Neptunium Fillet Knife bonus through Aquaculture filleting and cutting-board outputs, including chance-based extra slices
-- Backs off when another cutting-board recipe should win, so AquaCompat does not force its own recipe to the front
-- Cleans up JEI so the recipe list matches the behavior in game instead of showing stale or misleading entries
-- Includes a small fix for Aquaculture's moist farmland so ordinary crops and similar plants can treat it as farmland
+## What?
 
-This is not a content expansion. The point is to make existing mods agree with each other.
+- Adds cutting-board recipes for Aquaculture fish and for the vanilla cod and salmon cases that use the Neptunium Fillet Knife
+- Preserves Neptunium knife bonus output through filleting and cutting-board processing, including chance-based extra slices
+- does not override recipes when another same cutting-board recipe exists
+- Removes stale or misleading JEI entries so the recipe list matches in-game behavior
+- Makes Aquaculture's Neptunium farmland count as farmland for modded seeds, etc.
+- Somewhat configurable
 
-## Requirements
+## Installation
 
-AquaCompat requires Minecraft 1.21.1, NeoForge, and [Aquaculture 2](https://www.curseforge.com/minecraft/mc-mods/aquaculture).
+Drop AquaCompat into the `mods` folder with:
 
-[Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight) and [JEI](https://www.curseforge.com/minecraft/mc-mods/jei) are optional. If Farmer's Delight is missing, the cutting-board side of the mod has nothing to patch. If JEI is missing, only the JEI cleanup layer is skipped.
+- Minecraft 1.21.1
+- NeoForge 21.1.x
+- Aquaculture 2 `2.7.15+`
+
+Optional integrations:
+
+- Farmer's Delight `1.2.4+` for cutting-board recipe support
+- JEI `19.20.0+` for recipe-list cleanup
 
 ## Configuration
 
-The common config is mostly about the Neptunium knife bonus. You can turn it off, change the multiplier, decide how rounding works, whitelist or blacklist items and tags, choose whether cooked fish should participate, and control whether AquaCompat recipes should yield to competing cutting-board recipes.
+The common config controls the Neptunium knife bonus, including the multiplier, rounding, item and tag allow/block lists, cooked-fish handling, and whether AquaCompat recipes should yield to competing cutting-board recipes.
 
-There is also datapack support for per-fish overrides under `data/*/neptunium_fillet_bonus`. Those definitions take priority over the fallback multiplier from the config.
-
-## For players and pack makers
-
-If you already run Aquaculture with Farmer's Delight, this mod is meant to make filleting and cutting-board recipes feel like they belong in the same pack.
-
-For pack work, the common config is enough if you just want to tune the bonus globally. If you want different fish to use different values, use the datapack hook instead.
+For pack-specific balancing, use datapack overrides under `data/*/neptunium_fillet_bonus`. Datapack values take priority over the config fallback.
 
 ## Development
 
@@ -39,7 +40,7 @@ Toolchain:
 - NeoForge ModDev
 - Parchment mappings
 
-Build the mod:
+Build:
 
 ```powershell
 ./gradlew build
@@ -63,12 +64,17 @@ Run data generation:
 ./gradlew runData
 ```
 
-Generated resources in `src/generated/resources` are checked in on purpose. The compatibility sweep script lives at [scripts/compat-matrix.ps1](scripts/compat-matrix.ps1).
+Generated resources in `src/generated/resources` are checked in on purpose. The compatibility sweep script is [`scripts/compat-matrix.ps1`](scripts/compat-matrix.ps1).
 
 ## Issues
 
-When reporting a bug, include:
+Report bugs in [GitHub Issues](https://github.com/Makces/AquaCompat/issues), not in Aquaculture 2, Farmer's Delight, or JEI trackers.
 
-- Log when the bug happened.
-- Steps to reproduce the bug (if possible)
-- if removing Aquacompat fixes the bug
+Include:
+
+- Minecraft, NeoForge, and Aquaculture 2 versions
+- Whether Farmer's Delight and JEI are installed
+- Steps to reproduce
+- Expected result and actual result
+- Relevant log output
+- Whether removing AquaCompat makes the problem go away
