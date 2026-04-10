@@ -68,7 +68,7 @@ Generated resources in `src/generated/resources` are checked in on purpose. The 
 
 ## Issues
 
-Report bugs [report here](https://github.com/Makces/AquaCompat/issues), not in Aquaculture 2, Farmer's Delight, or JEI trackers.
+Dont report related bugs in Aquaculture 2, Farmer's Delight, or JEI. [Report here](https://github.com/Makces/AquaCompat/issues) 
 
 Include:
 
