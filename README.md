@@ -64,8 +64,6 @@ Run data generation:
 ./gradlew runData
 ```
 
-Generated resources in `src/generated/resources` are checked in on purpose. The compatibility sweep script is [`scripts/compat-matrix.ps1`](scripts/compat-matrix.ps1).
-
 ## Issues
 
 DO NOT report related bugs in Aquaculture 2, Farmer's Delight, or JEI. [Report here](https://github.com/Makces/AquaCompat/issues)
