@@ -68,12 +68,12 @@ Generated resources in `src/generated/resources` are checked in on purpose. The 
 
 ## Issues
 
-Dont report related bugs in Aquaculture 2, Farmer's Delight, or JEI. [Report here](https://github.com/Makces/AquaCompat/issues) 
+DO NOT report related bugs in Aquaculture 2, Farmer's Delight, or JEI. [Report here](https://github.com/Makces/AquaCompat/issues) cuz its most likely my fault... :C
 
 Include:
 
 - Minecraft, NeoForge, and Aquaculture 2 versions
-- Whether Farmer's Delight and JEI are installed
+- Modlists (Unless included in log you provide)
 - Steps to reproduce
 - Expected result and actual result
 - Relevant log output
