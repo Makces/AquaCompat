@@ -23,7 +23,7 @@ Drop AquaCompat into the `mods` folder with:
 Optional integrations:
 
 - Farmer's Delight `1.2.4+` for cutting-board recipe support
-- JEI `19.20.0+` for recipe-list cleanup
+- JEI `19.20.0+` for slightly more detailed recipe
 
 ## Configuration
 

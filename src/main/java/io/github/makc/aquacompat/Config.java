@@ -13,7 +13,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-// depreciation more like depression i hate those squigglie
+
 @EventBusSubscriber(modid = AquaCompat.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class Config {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
