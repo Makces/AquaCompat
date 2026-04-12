@@ -22,6 +22,7 @@ run-data/
 tmp/
 logs/
 crash-reports/
+scripts/
 
 # Generated caches; keep actual generated resources trackable
 src/generated/resources/.cache/
@@ -32,3 +33,4 @@ replay_pid*
 
 # Misc local artifacts
 *.log
+
