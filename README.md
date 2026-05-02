@@ -6,9 +6,7 @@ AquaCompat is a NeoForge 1.21.1 compatibility mod for Aquaculture 2. It adds the
 ## What?
 
 - Adds cutting-board recipes for Aquaculture fish and for the vanilla cod and salmon cases that use the Neptunium Fillet Knife
-- Preserves Neptunium knife bonus output through filleting and cutting-board processing, including chance-based extra slices
-- does not override recipes when another same cutting-board recipe exists
-- Removes stale or misleading JEI entries so the recipe list matches in-game behavior
+- Preserves Neptunium knife bonus output through filleting and cutting-board processing, including chance-based extra slices (does not override recipes when another same cutting-board recipe exists)
 - Makes Aquaculture's Neptunium farmland count as farmland for modded seeds, etc.
 - Somewhat configurable
 
